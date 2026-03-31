@@ -1,0 +1,10 @@
+streamlit
+langgraph
+langchain
+langchain-google-genai
+google-generativeai
+pandas
+plotly
+python-dotenv
+sqlite-utils
+openpyxl
