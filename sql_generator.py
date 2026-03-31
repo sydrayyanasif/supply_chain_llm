@@ -58,7 +58,10 @@ class SQLGenerator:
 # User ke sawal ko clearly double quotes me wrap karna useful hota hai
 # Isse LLM clearly samajhta hai ki: "Yeh hi user ka query hai"
 
-        response = self.llm.invoke(prompt)
+        try:
+            response = self.llm.invoke(prompt)
+        except Exception as e:
+            return f"Clarification needed: LLM service error — {e}"
         sql = response.content.strip()
         print("🔎 Generated SQL Query:\n", sql)
         return self._clean_sql_query(sql)
